@@ -62,16 +62,16 @@ stack_t *add_node(stack_t *head, int n)
 }
 /**
  * free_stack - frees stack
- * @stack: head of the stack
+ * @head: head of the stack
 */
 void free_stack(stack_t *head)
 {
 	stack_t *temp;
-	
+
 	if (!head)
 		return;
 	temp = head;
-	while(head->next)
+	while (head->next)
 	{
 		head = head->next;
 		free(temp);

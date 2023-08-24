@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <ctype.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -39,6 +40,10 @@ typedef struct instruction_s
 /* file_handling.c */
 FILE *open_file(char *file_name);
 
-void tokenize(char *str, char **argv);
+/* tokenize.c */
+void tokenize(char *str, int line_number);
+
+/* op_codes.c */
+void push(stack_t **stack, unsigned int line_number);
 
 #endif

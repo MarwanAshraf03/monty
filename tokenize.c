@@ -5,43 +5,28 @@
  * @str: the string to be tokenized
  * @argv: string array to have tokens
 */
-void tokenize(char *str, char **argv)
+void tokenize(char *str, int line_number)
 {
-	char *token;
 	const char *delim = " \n";
+	char *arg1, *arg2;
+	int push_value;
 	int counter;
 
-	if (!str)
-	{
-		printf("line 16\n");
-		argv[0] = argv[1] = argv[2] = NULL;
+	arg1 = strtok(str, delim);
+	if (!arg1)
 		return;
-	}
-	token = strtok(str, delim);
-	argv[0] = malloc(sizeof(char) * strlen(token));
-	strcpy(argv[0], token);
-	if (!str)
-	{
-		printf("line 16\n");
-		argv[0] = argv[1] = argv[2] = NULL;
-		return;
-	}
-	token = strtok(NULL, delim);
-	argv[1] = malloc(sizeof(char) * strlen(token));
-	strcpy(argv[1], token);
-
-	// for (counter = 0; token != NULL; counter++)
-	// for (counter = 0; counter < 2; counter++)
-	// {
-	// 	if (token == NULL)
-	// 	{
-	// 		// counter--;
-	// 		continue;
-	// 	}
-	// 	argv[counter] = malloc(sizeof(char) * strlen(token));
-	// 	strcpy(argv[counter], token);
-	// 	token = strtok(NULL, delim);
-	// }
-	argv[2] = NULL;
-	// argv[counter] = NULL;
+	arg2 = strtok(NULL, delim);
+	/* to check if the value of second string is numeric*/
+	if (strcmp(arg1, "push") == 0)
+		while (*arg2)
+		{
+			if (!isdigit(*arg2))
+			{
+				fprintf(stderr, "L%d: usage: push integer\n", line_number);
+				exit(EXIT_FAILURE);
+			}
+			arg2++;
+		}
+		push_value = atoi(arg2);
+		printf("%s -- %s -> %d\n", arg1, arg2, line_number);
 }

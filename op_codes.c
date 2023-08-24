@@ -4,17 +4,11 @@ void pall(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 {
     stack_t *temp;
 
-    printf("op_codes.c: pall: line 35\n");
     if (!stack || !*stack)
-    {
-        printf("op_codes.c: pall: line 38\n");
         return;
-    }
     temp = (*stack);
-    printf("%d\n", temp->n);
     while (temp->next)
     {
-        printf("op_codes.c: pall: line 44\n");
         printf("%d\n", temp->n);
         temp = temp->next;
     }

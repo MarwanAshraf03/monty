@@ -7,9 +7,7 @@ int main(int argc, char **argv)
     int line_number = 0;
     ssize_t no_read_chars;
     stack_t *head = NULL;
-    /* int fd; */
     FILE *fp;
-    /* char buffer[1024]; */
 
     if (argc != 2)
     {

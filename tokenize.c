@@ -18,10 +18,8 @@ void tokenize(char *str, int line_number, stack_t *head)
 	/* to check if the value of second string is numeric*/
 	if (strcmp(arg1, "push") == 0 && isnumber(arg2))
 	{
-		printf("tokenize: line 21\n");
 		if (!head)
 		{
-			printf("tokenize: line 24\n");
 			added->prev = NULL;
 			added->next = NULL;
 			added->n = atoi(arg2);
@@ -29,7 +27,6 @@ void tokenize(char *str, int line_number, stack_t *head)
 		}
 		else
 		{
-			printf("tokenize: line 32\n");
 			added->prev = NULL;
 			added->next = head;
 			added->n = atoi(arg2);

@@ -6,9 +6,10 @@ int main(int argc, char **argv)
     size_t n = 0;
     int line_number = 0;
     ssize_t no_read_chars;
-    int fd; 
+    stack_t *head = NULL;
+    /* int fd; */
     FILE *fp;
-    char buffer[1024];
+    /* char buffer[1024]; */
 
     if (argc != 2)
     {
@@ -21,7 +22,7 @@ int main(int argc, char **argv)
     while((no_read_chars = getline(&lineptr, &n, fp))>0)
     {
         line_number++;
-        tokenize(lineptr, line_number);
+        tokenize(lineptr, line_number, head);
     }
     return (EXIT_SUCCESS);
 }

@@ -5,28 +5,37 @@
  * @str: the string to be tokenized
  * @argv: string array to have tokens
 */
-void tokenize(char *str, int line_number)
+void tokenize(char *str, int line_number, stack_t *head)
 {
 	const char *delim = " \n";
 	char *arg1, *arg2;
-	int push_value;
-	int counter;
+	stack_t *added;
 
 	arg1 = strtok(str, delim);
 	if (!arg1)
 		return;
 	arg2 = strtok(NULL, delim);
 	/* to check if the value of second string is numeric*/
-	if (strcmp(arg1, "push") == 0)
-		while (*arg2)
+	if (strcmp(arg1, "push") == 0 && isnumber(arg2))
+	{
+		printf("tokenize: line 21\n");
+		if (!head)
 		{
-			if (!isdigit(*arg2))
-			{
-				fprintf(stderr, "L%d: usage: push integer\n", line_number);
-				exit(EXIT_FAILURE);
-			}
-			arg2++;
+			printf("tokenize: line 24\n");
+			head = malloc(sizeof(stack_t));
+			head->n = atoi(arg2);
+			head->next = NULL;
+			head->prev = NULL;
 		}
-		push_value = atoi(arg2);
-		printf("%s -- %s -> %d\n", arg1, arg2, line_number);
+		else
+		{
+			added = malloc(sizeof(stack_t));
+			added->prev = NULL;
+			added->next = head;
+			added->n = atoi(arg2);
+			head = added;
+		}
+	}
+	else
+		func_calls(&head, arg1, line_number);
 }

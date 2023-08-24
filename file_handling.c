@@ -1,6 +1,15 @@
 #include "monty.h"
 
-void open_file(file)
+FILE *open_file(char *file_name)
 {
-    printf("hello world\n");
+    FILE *fp;
+
+    fp = fopen(file_name, "r");
+    if (!fp)
+    {
+        fprintf(stderr, "Error: Can't open file %s\n", file_name);
+        exit(EXIT_FAILURE);
+    }
+
+    return (fp);
 }

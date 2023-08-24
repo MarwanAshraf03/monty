@@ -11,12 +11,37 @@ void tokenize(char *str, char **argv)
 	const char *delim = " \n";
 	int counter;
 
-	token = strtok(str, delim);
-	for (counter = 0; token != NULL; counter++)
+	if (!str)
 	{
-		argv[counter] = malloc(sizeof(char) * strlen(token));
-		strcpy(argv[counter], token);
-		token = strtok(NULL, delim);
+		printf("line 16\n");
+		argv[0] = argv[1] = argv[2] = NULL;
+		return;
 	}
-	argv[counter] = NULL;
+	token = strtok(str, delim);
+	argv[0] = malloc(sizeof(char) * strlen(token));
+	strcpy(argv[0], token);
+	if (!str)
+	{
+		printf("line 16\n");
+		argv[0] = argv[1] = argv[2] = NULL;
+		return;
+	}
+	token = strtok(NULL, delim);
+	argv[1] = malloc(sizeof(char) * strlen(token));
+	strcpy(argv[1], token);
+
+	// for (counter = 0; token != NULL; counter++)
+	// for (counter = 0; counter < 2; counter++)
+	// {
+	// 	if (token == NULL)
+	// 	{
+	// 		// counter--;
+	// 		continue;
+	// 	}
+	// 	argv[counter] = malloc(sizeof(char) * strlen(token));
+	// 	strcpy(argv[counter], token);
+	// 	token = strtok(NULL, delim);
+	// }
+	argv[2] = NULL;
+	// argv[counter] = NULL;
 }

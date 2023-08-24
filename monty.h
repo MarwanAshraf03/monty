@@ -36,6 +36,9 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/* file_handling.c */
+FILE *open_file(char *file_name);
+
 void tokenize(char *str, char **argv);
 
 #endif

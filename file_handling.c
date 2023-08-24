@@ -10,9 +10,19 @@ FILE *open_file(char *file_name)
 	FILE *fp;
 	int flag;
 
-	fp = fopen(file_name, "r");
+	if (!file_name)
+	{
+		fprintf(stderr, "Error: Can't open file %s\n", file_name);
+		exit(EXIT_FAILURE);
+	}
 	flag = access(file_name, F_OK);
-	if (!fp || flag)
+	if (flag)
+	{
+		fprintf(stderr, "Error: Can't open file %s\n", file_name);
+		exit(EXIT_FAILURE);
+	}
+	fp = fopen(file_name, "r");
+	if (!fp)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", file_name);
 		exit(EXIT_FAILURE);

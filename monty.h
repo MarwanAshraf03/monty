@@ -56,6 +56,7 @@ void pop(stack_t **stack, unsigned int line_number);
 /* op_codes2.c */
 void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
+void nop(__attribute__((unused))stack_t **stack, __attribute__((unused))unsigned int line_number);
 
 /* func_handling.c */
 void func_calls(stack_t **stack, char *arg1, int line_number);

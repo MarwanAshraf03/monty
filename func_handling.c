@@ -13,6 +13,7 @@ void func_calls(stack_t **stack, char *arg, int line_number)
 		{"pop", pop},
 		{"swap", swap},
 		{"add", add},
+		{"nop", nop},
 		{NULL, NULL}
 	};
 	int iterator = 0, found = 0;

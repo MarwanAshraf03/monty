@@ -16,6 +16,7 @@ void func_calls(stack_t **stack, char *arg, int line_number)
 		{"nop", nop},
 		{"sub", sub},
 		{"div", _div},
+		{"mul", _mul},
 		{NULL, NULL}
 	};
 	int iterator = 0, found = 0;

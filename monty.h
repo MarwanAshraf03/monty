@@ -51,6 +51,7 @@ void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 stack_t *add_node(stack_t *head, int n);
 void free_stack(stack_t *head);
+void pop(stack_t **stack, unsigned int line_number);
 
 /* func_handling.c */
 void func_calls(stack_t **stack, char *arg1, int line_number);

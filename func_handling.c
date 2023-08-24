@@ -12,12 +12,20 @@ void func_calls(stack_t **stack, char *arg, int line_number)
 		{"pint", pint},
 		{NULL, NULL}
 	};
-	int iterator = 0;
+	int iterator = 0, found = 0;
 
 	while (inst[iterator].opcode)
 	{
 		if (strcmp(arg, inst[iterator].opcode) == 0)
+		{
+			found = 1;
 			inst[iterator].f(stack, line_number);
+		}
 		iterator++;
+	}
+	if (!found)
+	{
+		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, arg);
+		exit(EXIT_FAILURE);
 	}
 }

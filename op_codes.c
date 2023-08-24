@@ -71,12 +71,10 @@ void free_stack(stack_t *head)
 	if (!head)
 		return;
 	temp = head;
-	while (head->next)
+	while (head)
 	{
+		temp = head;
 		head = head->next;
 		free(temp);
-		temp = head;
 	}
-	temp = temp->next;
-	free(temp);
 }

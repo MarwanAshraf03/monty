@@ -9,6 +9,7 @@ void func_calls(stack_t **stack, char *arg, int line_number)
 {
 	instruction_t inst[] = {
 		{"pall", pall},
+		{"pint", pint},
 		{NULL, NULL}
 	};
 	int iterator = 0;

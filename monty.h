@@ -48,6 +48,7 @@ void tokenize(char *str, int line_number, stack_t **head);
 
 /* op_codes.c */
 void pall(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
 stack_t *add_node(stack_t *head, int n);
 
 /* func_handling.c */

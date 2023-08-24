@@ -7,7 +7,6 @@
 void pall(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 {
 	stack_t *temp;
-	int counter = 0;
 
 	if (!stack || !*stack)
 		return;
@@ -16,12 +15,24 @@ void pall(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 	{
 		printf("%d\n", temp->n);
 		temp = temp->next;
-		counter++;
-		printf("counter -> %d\n", counter);
 	}
 		printf("%d\n", temp->n);
+	temp = temp->next;
+	free(temp);
 }
-
+/**
+ * pint - prints value at top
+ * @stack: head of the stack
+*/
+void pint(stack_t **stack, unsigned int line_number)
+{
+	if (!*stack || !stack)
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	printf("%d\n", (*stack)->n);
+}
 /**
  * add_node - initializes node
  * @head: node to be initialized
@@ -34,7 +45,6 @@ stack_t *add_node(stack_t *head, int n)
 
 	if (head == NULL)
 	{
-		printf("op_codes: line 35\n");
 		new->next = NULL;
 		new->prev = NULL;
 		new->n = n;
@@ -42,7 +52,6 @@ stack_t *add_node(stack_t *head, int n)
 	}
 	else
 	{
-		printf("op_codes: line 43\n");
 		new->next = head;
 		new->prev = NULL;
 		new->n = n;

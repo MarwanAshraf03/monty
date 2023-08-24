@@ -7,6 +7,7 @@
 void pall(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 {
 	stack_t *temp;
+	int counter = 0;
 
 	if (!stack || !*stack)
 		return;
@@ -15,9 +16,10 @@ void pall(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 	{
 		printf("%d\n", temp->n);
 		temp = temp->next;
+		counter++;
+		printf("counter -> %d\n", counter);
 	}
 		printf("%d\n", temp->n);
-	free(temp);
 }
 
 /**
@@ -32,6 +34,7 @@ stack_t *add_node(stack_t *head, int n)
 
 	if (head == NULL)
 	{
+		printf("op_codes: line 35\n");
 		new->next = NULL;
 		new->prev = NULL;
 		new->n = n;
@@ -39,6 +42,7 @@ stack_t *add_node(stack_t *head, int n)
 	}
 	else
 	{
+		printf("op_codes: line 43\n");
 		new->next = head;
 		new->prev = NULL;
 		new->n = n;

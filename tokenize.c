@@ -15,9 +15,13 @@ void tokenize(char *str, int line_number, stack_t **head)
 	if (!arg1)
 		return;
 	arg2 = strtok(NULL, delim);
+	printf("%s -- %s -> %d\n", arg1, arg2, line_number);
 	/* to check if the value of second string is numeric*/
 	if (strcmp(arg1, "push") == 0 && isnumber(arg2))
+	{
+		printf("tokenize: line 23 arg2 is %d -> %d\n", isnumber(arg2), line_number);
 		*head = add_node(*head, atoi(arg2));
+	}
 	else
 		func_calls(head, arg1, line_number);
 }

@@ -16,8 +16,15 @@ void tokenize(char *str, int line_number, stack_t **head)
 		return;
 	arg2 = strtok(NULL, delim);
 	/* to check if the value of second string is numeric*/
-	if (strcmp(arg1, "push") == 0 && isnumber(arg2))
+	if (strcmp(arg1, "push") == 0)
+	{
+		if (!isnumber(arg2))
+		{
+			fprintf(stderr, "L%d: usage: push integer\n", line_number);
+			exit(EXIT_FAILURE);
+		}
 		*head = add_node(*head, atoi(arg2));
+	}
 	else
 		func_calls(head, arg1, line_number);
 }

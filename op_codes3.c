@@ -44,3 +44,26 @@ void _mod(stack_t **stack, unsigned int line_number)
 	(*stack) = temp2;
 	free(temp1);
 }
+/**
+ * pchar - prints char value of top element
+ * @stack: head of the stack
+ * @line_number: number of current line
+*/
+void pchar(stack_t **stack, unsigned int line_number)
+{
+	if (!*stack || !stack)
+	{
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	if (
+		((*stack)->n < 'a' || (*stack)->n > 'z')
+		&&
+		((*stack)->n < 'A' || (*stack)->n > 'Z')
+		)
+{
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	printf("%c\n", (*stack)->n);
+}

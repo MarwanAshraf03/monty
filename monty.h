@@ -63,6 +63,7 @@ void _div(stack_t **stack, unsigned int line_number);
 /* op_codes3.c */
 void _mul(stack_t **stack, unsigned int line_number);
 void _mod(stack_t **stack, unsigned int line_number);
+void pchar(stack_t **stack, unsigned int line_number);
 
 /* func_handling.c */
 void func_calls(stack_t **stack, char *arg1, int line_number);

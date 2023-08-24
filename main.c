@@ -1,4 +1,6 @@
 #include "monty.h"
+#include <stdio.h>
+
 /**
  * main - entry point of the code
  * @argc: number of arguments
@@ -23,7 +25,7 @@ int main(int argc, char **argv)
 	while ((no_read_chars = getline(&lineptr, &n, fp)) > 0)
 	{
 		line_number++;
-		tokenize(lineptr, line_number, head);
+		tokenize(lineptr, line_number, &head);
 	}
 	return (EXIT_SUCCESS);
 }

@@ -15,11 +15,8 @@ void func_calls(stack_t **stack, char *arg, int line_number)
 
 	while (inst[iterator].opcode)
 	{
-	if (strcmp(arg, inst[iterator].opcode) == 0)
-	{
-		printf("func_handling.c: line 15, %s\n", inst[iterator].opcode);
-		inst[iterator].f(stack, line_number);
+		if (strcmp(arg, inst[iterator].opcode) == 0)
+			inst[iterator].f(stack, line_number);
+		iterator++;
 	}
-	iterator++;
-}
 }

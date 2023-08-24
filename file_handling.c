@@ -1,5 +1,10 @@
 #include "monty.h"
-
+/**
+ * open_file - opens a file
+ * @file_name: name of the file
+ * Return: returns pointer to a FILE on success
+ * and null otherwise
+*/
 FILE *open_file(char *file_name)
 {
 	FILE *fp;

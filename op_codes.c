@@ -16,26 +16,33 @@ void pall(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 		printf("%d\n", temp->n);
 		temp = temp->next;
 	}
+		printf("%d\n", temp->n);
 	free(temp);
 }
+
 /**
- * node_init - initializes node
- * @stack: node to be initialized
+ * add_node - initializes node
+ * @head: node to be initialized
  * @n: value to be put in node
  * Return: the new node
 */
-stack_t *node_init(stack_t **stack, int n)
+stack_t *add_node(stack_t *head, int n)
 {
-	stack_t *added = malloc(sizeof(stack_t));
+	stack_t *new = malloc(sizeof(stack_t));
 
-	if (!added)
+	if (head == NULL)
 	{
-		fprintf(stderr, "Error: malloc failed");
-		exit(EXIT_FAILURE);
+		new->next = NULL;
+		new->prev = NULL;
+		new->n = n;
+		head = new;
 	}
-	added->n = n;
-	added->next = NULL;
-	added->prev = NULL;
-	*stack = added;
-	return (*stack);
+	else
+	{
+		new->next = head;
+		new->prev = NULL;
+		new->n = n;
+		head = new;
+	}
+	return (head);
 }

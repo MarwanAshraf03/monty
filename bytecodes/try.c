@@ -9,7 +9,7 @@ typedef struct stack_s
 } stack_t;
 
 
-stack_t *node_init(stack_t **head, int n)
+stack_t *add_node(stack_t **head, int n)
 {
     *head = malloc(sizeof(stack_t));
 
@@ -23,6 +23,6 @@ void main(void)
     stack_t *head = NULL;
 
     printf("%d\n", !head);
-    head = node_init(&head, 5);
+    head = add_node(&head, 5);
     printf("%d\n", !head);
 }

@@ -16,7 +16,7 @@ FILE *open_file(char *file_name)
 		exit(EXIT_FAILURE);
 	}
 	flag = access(file_name, F_OK);
-	if (flag)
+	if (flag == -1)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", file_name);
 		exit(EXIT_FAILURE);

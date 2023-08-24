@@ -25,5 +25,8 @@ int main(int argc, char **argv)
 		line_number++;
 		tokenize(lineptr, line_number, &head);
 	}
+	free(lineptr);
+	fclose(fp);
+	free_stack(head);
 	return (EXIT_SUCCESS);
 }

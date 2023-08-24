@@ -3,7 +3,8 @@
 /**
  * tokenize - tokenizes a string into tokens
  * @str: the string to be tokenized
- * @argv: string array to have tokens
+ * @line_number: number of current line
+ * @head: head of the stack
 */
 void tokenize(char *str, int line_number, stack_t *head)
 {

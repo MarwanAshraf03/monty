@@ -1,5 +1,10 @@
 #include "monty.h"
-
+/**
+ * main - entry point of the code
+ * @argc: number of arguments
+ * @argv: list of arguments
+ * Return: 0 on success, 1 otherwise
+*/
 int main(int argc, char **argv)
 {
     char *lineptr = NULL;

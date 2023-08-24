@@ -1,5 +1,9 @@
 #include "monty.h"
-
+/**
+ * pall - prints all elements in stack
+ * @stack: head of the stack
+ * @line_number: number of line
+*/
 void pall(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 {
     stack_t *temp;
@@ -14,7 +18,12 @@ void pall(stack_t **stack, __attribute__((unused)) unsigned int line_number)
     }
     free(temp);
 }
-
+/**
+ * node_init - initializes node
+ * @stack: node to be initialized
+ * @n: value to be put in node
+ * Return: the new node
+*/
 stack_t *node_init(stack_t **stack, int n)
 {
     stack_t *added = malloc(sizeof(stack_t));

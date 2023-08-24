@@ -9,7 +9,7 @@ void tokenize(char *str, int line_number, stack_t *head)
 {
 	const char *delim = " \n";
 	char *arg1, *arg2;
-	stack_t *added;
+	stack_t *added = malloc(sizeof(stack_t));
 
 	arg1 = strtok(str, delim);
 	if (!arg1)
@@ -22,14 +22,14 @@ void tokenize(char *str, int line_number, stack_t *head)
 		if (!head)
 		{
 			printf("tokenize: line 24\n");
-			head = malloc(sizeof(stack_t));
-			head->n = atoi(arg2);
-			head->next = NULL;
-			head->prev = NULL;
+			added->prev = NULL;
+			added->next = NULL;
+			added->n = atoi(arg2);
+			head = added;
 		}
 		else
 		{
-			added = malloc(sizeof(stack_t));
+			printf("tokenize: line 32\n");
 			added->prev = NULL;
 			added->next = head;
 			added->n = atoi(arg2);

@@ -23,6 +23,7 @@ void pall(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 /**
  * pint - prints value at top
  * @stack: head of the stack
+ * @line_number: number of current line
 */
 void pint(stack_t **stack, unsigned int line_number)
 {

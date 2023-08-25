@@ -11,6 +11,11 @@ void tokenize(char *str, int line_number, stack_t **head)
 	const char *delim = " \n";
 	char *arg1, *arg2;
 
+	if (!str)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
+	}
 	arg1 = strtok(str, delim);
 	if (!arg1)
 		return;

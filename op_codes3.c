@@ -80,7 +80,7 @@ void pstr(stack_t **stack, __attribute__((unused))unsigned int line_number)
 	if (!*stack || !stack)
 	{
 		printf("\n");
-		exit(EXIT_SUCCESS);
+		return;
 	}
 	temp = (*stack);
 	while (temp)

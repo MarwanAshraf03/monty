@@ -67,3 +67,32 @@ void pchar(stack_t **stack, unsigned int line_number)
 	}
 	printf("%c\n", (*stack)->n);
 }
+/**
+ * pstr - prints string of stack
+ * @stack: head of the stack
+ * @line_number: number of current line
+*/
+void pstr(stack_t **stack, __attribute__((unused))unsigned int line_number)
+{
+	stack_t *temp;
+	int chr;
+
+	if (!*stack || !stack)
+	{
+		printf("\n");
+		exit(EXIT_SUCCESS);
+	}
+	temp = (*stack);
+	while (temp)
+	{
+		chr = temp->n;
+		if (chr == 0)
+			break;
+		if ((chr >= 'a' && chr <= 'z') || (chr >= 'A' && chr <= 'Z'))
+			putchar(chr);
+		else
+			break;
+		temp = temp->next;
+	}
+	putchar('\n');
+}

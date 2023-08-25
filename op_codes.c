@@ -69,7 +69,6 @@ void free_stack(stack_t *head)
 
 	if (!head)
 		return;
-	temp = head;
 	while (head)
 	{
 		temp = head;

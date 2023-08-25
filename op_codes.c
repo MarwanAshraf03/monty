@@ -11,13 +11,11 @@ void pall(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 	if (!stack || !*stack)
 		return;
 	temp = (*stack);
-	while (temp->next)
+	while (temp)
 	{
 		printf("%d\n", temp->n);
 		temp = temp->next;
 	}
-		printf("%d\n", temp->n);
-	temp = temp->next;
 }
 /**
  * pint - prints value at top

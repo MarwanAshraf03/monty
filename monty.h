@@ -7,6 +7,12 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <ctype.h>
+#define ERR_1 "USAGE: monty file\n"
+#define ERR_2 "Error: Can't open file %s\n"
+#define ERR_3 "L%d: unknown instruction %s\n"
+#define ERR_4 "Error: malloc failed\n"
+#define ERR_5 "L%d: usage: push integer\n"
+#define ERR_6 "L%d: usage: push integer\n"
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)

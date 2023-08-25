@@ -12,19 +12,19 @@ FILE *open_file(char *file_name)
 
 	if (!file_name)
 	{
-		fprintf(stderr, "Error: Can't open file %s\n", file_name);
+		fprintf(stderr, FILE_NO_OPEN, file_name);
 		exit(EXIT_FAILURE);
 	}
 	flag = access(file_name, F_OK);
 	if (flag == -1)
 	{
-		fprintf(stderr, "Error: Can't open file %s\n", file_name);
+		fprintf(stderr, FILE_NO_OPEN, file_name);
 		exit(EXIT_FAILURE);
 	}
 	fp = fopen(file_name, "r");
 	if (!fp)
 	{
-		fprintf(stderr, "Error: Can't open file %s\n", file_name);
+		fprintf(stderr, FILE_NO_OPEN, file_name);
 		exit(EXIT_FAILURE);
 	}
 	return (fp);

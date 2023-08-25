@@ -35,7 +35,7 @@ void func_calls(stack_t **stack, char *arg, int line_number)
 	}
 	if (!found)
 	{
-		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, arg);
+		fprintf(stderr, BAD_INST, line_number, arg);
 		exit(EXIT_FAILURE);
 	}
 }

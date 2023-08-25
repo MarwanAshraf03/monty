@@ -7,12 +7,22 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <ctype.h>
-#define ERR_1 "USAGE: monty file\n"
-#define ERR_2 "Error: Can't open file %s\n"
-#define ERR_3 "L%d: unknown instruction %s\n"
-#define ERR_4 "Error: malloc failed\n"
-#define ERR_5 "L%d: usage: push integer\n"
-#define ERR_6 "L%d: usage: push integer\n"
+#define USAGE "USAGE: monty file\n"
+#define FILE_NO_OPEN "Error: Can't open file %s\n"
+#define BAD_INST "L%d: unknown instruction %s\n"
+#define MALLOC_FAIL "Error: malloc failed\n"
+#define PUSH "L%d: usage: push integer\n"
+#define PINT "L%d: can't pint, stack empty\n"
+#define POP "L%d: can't pop an empty stack\n"
+#define SWAP "L%d: can't swap, stack too short\n"
+#define ADD "L%d: can't add, stack too short\n"
+#define SUB "L%d: can't sub, stack too short\n"
+#define DIV_FAIL "L%d: can't div, stack too short\n"
+#define DIV_ZERO "L%d: division by zero\n"
+#define MUL "L%d: can't mul, stack too short\n"
+#define MOD_FAIL "L%d: can't mod, stack too short\n"
+#define PCHAR_FAIL "L%d: can't pchar, stack empty\n"
+#define PCHAR_OUT_BOUNDS "L%d: can't pchar, value out of range\n"
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)

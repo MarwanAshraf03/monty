@@ -17,7 +17,6 @@ void tokenize(char *str, int line_number, stack_t **head)
 	arg2 = strtok(NULL, delim);
 	if (*arg1 == '#')
 		return;
-	/* to check if the value of second string is numeric*/
 	if (strcmp(arg1, "push") == 0)
 	{
 		if (!isnumber(arg2))

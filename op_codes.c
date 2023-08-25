@@ -18,7 +18,6 @@ void pall(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 	}
 		printf("%d\n", temp->n);
 	temp = temp->next;
-	free(temp);
 }
 /**
  * pint - prints value at top

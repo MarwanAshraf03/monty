@@ -7,6 +7,8 @@
 */
 int isnumber(char *arg2)
 {
+	if (!arg2)
+		return (0);
 	while (*arg2)
 	{
 		if (*arg2 == '-')
